@@ -5,16 +5,76 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sobre Mim | MalveiraCaioDev</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      font-family: monospace;
+      background-color: #000;
+      color: #0f0;
+      padding: 20px;
+      font-size: 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .logo {
+      width: 150px;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 2;
+    }
+
+    .sobre-terminal {
+      margin-top: 180px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .gatilho-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0f0;
+      color: #000;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .avaliacoes {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .avaliacoes img {
+      max-width: 300px;
+      border: 2px solid #0f0;
+    }
+
+    .menu {
+      margin-top: 100px;
+      display: flex;
+      gap: 20px;
+      font-size: 1.2rem;
+    }
+
+    .menu a {
+      color: #0f0;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
   <img src="images/malveiracaiodev.png" alt="Logo Malveira Caio Dev" class="logo" />
   <div class="stars" id="stars"></div>
   <div class="glow"></div>
-<nav class="menu">
-  <a href="index.html">🏠 Início</a>
-  <a href="sobre.html">👤 Sobre Mim</a>
-  <a href="ComprasOrganizadas.html">📱 App Compras</a>
-</nav>
+
+  <nav class="menu">
+    <a href="index.html">🏠 Início</a>
+    <a href="sobre.html">👤 Sobre Mim</a>
+    <a href="ComprasOrganizadas.html">📱 App Compras</a>
+  </nav>
 
   <section class="sobre-terminal">
     <pre>
@@ -28,13 +88,11 @@ log("Motorista de aplicativo na Uber e na 99Pop por 4 anos.");
 log("Marido de uma mulher maravilhosa e pai de uma princesa linda");
 log("Cursando superior tecnólogo em Sistemas para Internet na Estácio desde Agosto de 2025");
 log("Primeiros experimentos em C, C++, Python, JavaScript, HTML, CSS e buscando aprender várias outras linguagens de programação.");
-
-<span class="gatilho" onclick="mostrarAvaliacoes()">if (user === click)</span> {
-  show("Avaliações como motorista da Uber e da 99Pop");
-}
     </pre>
 
-    <div class="avaliacoes" id="avaliacoes" style="display: none;">
+    <button class="gatilho-btn" onclick="mostrarAvaliacoes()">Mostrar Avaliações</button>
+
+    <div class="avaliacoes" id="avaliacoes">
       <img src="images/avaliacaouber1.webp" alt="Avaliação Uber 1" />
       <img src="images/avaliacao991.webp" alt="Avaliação Uber 2" />
       <img src="images/avaliacao992.webp" alt="Avaliação 99Pop" />
