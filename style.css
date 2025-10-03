@@ -21,7 +21,7 @@ html, body {
   transform: translateX(-50%);
   width: 600px;
   max-width: 95%;
-  z-index: 2;
+  z-index: 3; /* elevado para não interferir com o menu */
 }
 
 /* Menu de navegação */
@@ -30,6 +30,8 @@ html, body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
+  margin-top: 150px; /* espaço abaixo do logo */
+  position: relative;
   z-index: 2;
 }
 

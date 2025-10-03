@@ -12,26 +12,58 @@
       overflow-x: auto;
       overflow-y: auto;
       width: 100%;
-      height: 100%;
+      min-height: 100vh;
       font-family: monospace;
       background-color: #000;
       color: #0f0;
       font-size: 1.2rem;
+      padding-top: 250px; /* espaço reservado para o logo */
     }
 
     .logo {
       width: 700px;
+      max-width: 95%;
       position: absolute;
       top: 20px;
       left: 50%;
       transform: translateX(-50%);
+      z-index: 3; /* elevado para ficar acima do fundo */
+    }
+
+    .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      font-size: 1.2rem;
+      margin-top: 20px; /* espaço abaixo do logo */
+      position: relative;
       z-index: 2;
     }
 
+    .menu a {
+      color: #0f0;
+      text-decoration: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .menu a:hover {
+      background-color: rgba(0, 255, 0, 0.2);
+      transform: scale(1.05);
+    }
+
     .sobre-terminal {
-      margin-top: 300px;
+      margin-top: 60px;
       position: relative;
       z-index: 1;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
     }
 
     .gatilho-btn {
@@ -58,17 +90,34 @@
       height: auto;
     }
 
-    .menu {
-      margin-top: 100px;
-      display: flex;
-      gap: 20px;
-      font-size: 1.2rem;
-      flex-wrap: wrap;
+    .stars {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
     }
 
-    .menu a {
-      color: #0f0;
-      text-decoration: none;
+    .glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      animation: pulse 10s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.1;
+      }
+      50% {
+        opacity: 0.3;
+      }
     }
   </style>
 </head>
