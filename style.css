@@ -1,16 +1,20 @@
-/* Fundo galáctico e layout base */
+/* Reset e base */
+* {
+  box-sizing: border-box;
+}
+
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100vh;
   background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000 100%);
-  overflow-x: auto;
+  overflow-x: hidden;
   overflow-y: auto;
   color: white;
   font-family: 'Segoe UI', sans-serif;
   font-size: 1.2rem;
-  padding-top: 250px; /* reserva espaço para o logo */
+  padding-top: 250px;
 }
 
 /* Logotipo fixo no topo */
@@ -21,7 +25,7 @@ html, body {
   transform: translateX(-50%);
   width: 600px;
   max-width: 95%;
-  z-index: 3; /* elevado para não interferir com o menu */
+  z-index: 3;
 }
 
 /* Menu de navegação */
@@ -30,7 +34,7 @@ html, body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  margin-top: 150px; /* espaço abaixo do logo */
+  margin-top: 150px;
   position: relative;
   z-index: 2;
 }
@@ -45,9 +49,11 @@ html, body {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.menu a:hover {
+.menu a:hover,
+.menu a:focus {
   background-color: rgba(73, 226, 165, 0.3);
   transform: scale(1.05);
+  outline: none;
 }
 
 /* Estrelas animadas */
@@ -110,7 +116,7 @@ html, body {
 .app-download {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 30px;
-  margin-top: 60px;
+  margin: 60px auto;
   border-radius: 10px;
   max-width: 600px;
   text-align: center;
@@ -126,6 +132,7 @@ html, body {
 .app-download p {
   font-size: 1.1em;
   margin-bottom: 20px;
+  line-height: 1.5;
 }
 
 /* Botão de download */
@@ -140,9 +147,11 @@ html, body {
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.botao-download:hover {
+.botao-download:hover,
+.botao-download:focus {
   background-color: #00cc77;
   transform: scale(1.05);
+  outline: none;
 }
 
 /* Botão de avaliações */
@@ -154,6 +163,15 @@ html, body {
   border: none;
   cursor: pointer;
   font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.gatilho-btn:hover,
+.gatilho-btn:focus {
+  background-color: #0c0;
+  transform: scale(1.05);
+  outline: none;
 }
 
 /* Imagens de avaliações */
@@ -167,6 +185,57 @@ html, body {
 }
 
 .avaliacoes img {
-  max-width: 100%;
+  max-width: 300px;
   height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,255,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.avaliacoes img:hover {
+  transform: scale(1.05);
+}
+
+/* Terminal estilo código */
+.sobre-terminal {
+  margin-top: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  z-index: 2;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .logo {
+    width: 90%;
+  }
+
+  .menu {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+  }
+
+  .avaliacoes img {
+    max-width: 90%;
+  }
+
+  .sobre-terminal {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .app-download h2 {
+    font-size: 1.5em;
+  }
+
+  .app-download p {
+    font-size: 1em;
+  }
 }
