@@ -18,8 +18,8 @@ html, body {
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 400px;         /* Aumentado de 300px para 400px */
-  max-width: 90%;       /* Permite que ele cresça mais em telas maiores */
+  width: 700px;         /* Aumentado para 500px */
+  max-width: 95%;       /* Permite crescer mais em telas grandes */
   z-index: 2;
 }
 
