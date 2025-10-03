@@ -27,7 +27,7 @@ html, body {
 /* Menu de navegação */
 .menu {
   position: relative;
-  margin-top: 180px;
+  margin-top: 220px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
