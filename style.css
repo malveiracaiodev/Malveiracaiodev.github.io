@@ -18,7 +18,7 @@ html, body {
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 700px;         /* Aumentado para 500px */
+  width: 1400px;         /* Aumentado para 1400px */
   max-width: 95%;       /* Permite crescer mais em telas grandes */
   z-index: 2;
 }
