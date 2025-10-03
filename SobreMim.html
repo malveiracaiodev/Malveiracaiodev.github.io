@@ -6,30 +6,33 @@
   <title>Sobre Mim | MalveiraCaioDev</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: auto;
+      overflow-y: auto;
+      width: 100%;
+      height: 100%;
       font-family: monospace;
       background-color: #000;
       color: #0f0;
-      padding: 20px;
       font-size: 1.2rem;
+    }
+
+    .logo {
+      width: 250px;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .sobre-terminal {
+      margin-top: 300px;
       position: relative;
       z-index: 1;
     }
-
-.logo {
-  width: 250px;
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-}
-
-.sobre-terminal {
-  margin-top: 300px;
-  z-index: 1;
-  position: relative;
-}
 
     .gatilho-btn {
       margin-top: 20px;
@@ -43,25 +46,24 @@
 
     .avaliacoes {
       display: none;
-      flex-direction: column;
-      gap: 10px;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
       margin-top: 20px;
+      justify-content: center;
     }
 
-.avaliacoes {
-  display: none;
-  flex-direction: row; /* agora em linha */
-  flex-wrap: wrap;     /* quebra linha se necessário */
-  gap: 20px;
-  margin-top: 20px;
-  justify-content: center; /* centraliza horizontalmente */
-}
+    .avaliacoes img {
+      max-width: 100%;
+      height: auto;
+    }
 
     .menu {
       margin-top: 100px;
       display: flex;
       gap: 20px;
       font-size: 1.2rem;
+      flex-wrap: wrap;
     }
 
     .menu a {
@@ -95,7 +97,7 @@ log("Cursando superior tecnólogo em Sistemas para Internet na Estácio desde Ag
 log("Primeiros experimentos em C, C++, Python, JavaScript, HTML, CSS e buscando aprender várias outras linguagens de programação.");
     </pre>
 
-    <button class="gatilho-btn" onclick="mostrarAvaliacoes()">Mostrar Avaliações</button>
+    <button class="gatilho-btn" onclick="toggleAvaliacoes()">Avaliações dos aplicativos de motorista</button>
 
     <div class="avaliacoes" id="avaliacoes">
       <img src="images/avaliacaouber1.webp" alt="Avaliação Uber 1" />
@@ -106,8 +108,9 @@ log("Primeiros experimentos em C, C++, Python, JavaScript, HTML, CSS e buscando 
 
   <script src="stars.js"></script>
   <script>
-    function mostrarAvaliacoes() {
-      document.getElementById('avaliacoes').style.display = 'flex';
+    function toggleAvaliacoes() {
+      const div = document.getElementById('avaliacoes');
+      div.style.display = (div.style.display === 'none' || div.style.display === '') ? 'flex' : 'none';
     }
   </script>
 </body>
