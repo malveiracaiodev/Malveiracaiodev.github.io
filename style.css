@@ -10,6 +10,7 @@ html, body {
   color: white;
   font-family: 'Segoe UI', sans-serif;
   font-size: 1.2rem;
+  padding-top: 250px; /* reserva espaço para o logo */
 }
 
 /* Logotipo fixo no topo */
@@ -18,16 +19,13 @@ html, body {
   top: 30px;
   left: 50%;
   transform: translateX(-50%);
-  width: 1400px;         /* Aumentado para 1400px */
-  max-width: 95%;       /* Permite crescer mais em telas grandes */
+  width: 600px;
+  max-width: 95%;
   z-index: 2;
 }
 
-
 /* Menu de navegação */
 .menu {
-  position: relative;
-  margin-top: 220px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -110,7 +108,7 @@ html, body {
 .app-download {
   background-color: rgba(0, 0, 0, 0.6);
   padding: 30px;
-  margin-top: 120px;
+  margin-top: 60px;
   border-radius: 10px;
   max-width: 600px;
   text-align: center;
