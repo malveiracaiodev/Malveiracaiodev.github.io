@@ -5,21 +5,30 @@
 <title>Currículo - Caio Vitor</title>
 
 <style>
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-        background: #f4f6f9;
-        color: #333;
-    }
+body{
+    font-family:'Segoe UI',sans-serif;
+    margin:0;
+    background:transparent;
+    color:white;
+    position:relative;
+    z-index:2;
+}
 
-    .container{
-        max-width: 900px;
-        margin: 30px auto;
-        background: white;
-        padding: 40px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        border-radius: 12px;
-    }
+.container{
+    max-width:1000px;
+    margin:40px auto;
+    padding:40px;
+
+    background:rgba(255,255,255,0.06);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(142,247,255,0.15);
+
+    border-radius:20px;
+
+    color:white;
+}
 
     h1{
         text-align: center;
@@ -86,7 +95,23 @@
 </head>
 
 <body>
+<!-- Fundo Cósmico -->
+<div class="stars" id="stars"></div>
+<div class="glow"></div>
 
+<!-- Logo -->
+<img src="images/malveiracaiodev.png"
+     alt="Logo Malveira Caio Dev"
+     class="logo">
+
+<!-- Menu -->
+<nav class="menu">
+  <a href="index.html">🏠 Início</a>
+  <a href="SobreMim.html">👤 Sobre Mim</a>
+  <a href="ComprasOrganizadas.html">📱 App Compras</a>
+  <a href="FinanceOrganization.html">💰 FinanceOrganization</a>
+  <a href="Currículo.html">📄 Currículo</a>
+</nav>
 <div class="container">
 
 <h1>Caio Vitor Malveira de Melo</h1>
@@ -164,6 +189,6 @@ Atuar nas áreas de Tecnologia, Suporte Técnico, Administrativo ou Operacional,
 </div>
 
 </div>
-
+<script src="stars.js"></script>
 </body>
 </html>
