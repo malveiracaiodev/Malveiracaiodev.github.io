@@ -1,68 +1,90 @@
-<section class="hero">
-  <h1>👤 Sobre Mim</h1>
-  <p>
-    Desenvolvedor em formação, apaixonado por tecnologia,
-    automação e criação de sistemas úteis.
-  </p>
-</section>
+<!DOCTYPE html>
+<html lang="pt-br">
 
-<section class="about-grid">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <div class="card">
-    <h3>🚀 Quem sou eu</h3>
-    <p>
-      Meu nome é Caio Vitor Malveira de Melo.  
-      Sou natural de Natal/RN e tenho paixão por tecnologia desde a infância.
-    </p>
-  </div>
+  <title>Sobre Mim | MalveiraCaioDev</title>
 
-  <div class="card">
-    <h3>🎓 Formação</h3>
-    <p>
-      • Sistemas para Internet (em andamento)<br>
-      • Ensino Médio completo<br>
-      • Cursos em tecnologia, IA e produtividade
-    </p>
-  </div>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
 
-  <div class="card">
-    <h3>💼 Experiência</h3>
-    <p>
-      • Força Aérea Brasileira (disciplina e trabalho em equipe)<br>
-      • Uber / 99 (atendimento e experiência com clientes)<br>
-      • Teleperformance (suporte e metas)
-    </p>
-  </div>
+<body>
 
-  <div class="card">
-    <h3>🧠 Tecnologias</h3>
-    <p>
-      HTML • CSS • JavaScript • Python • C • C++ • Flutter • IA
-    </p>
-  </div>
+  <div class="stars" id="stars"></div>
+  <div class="glow"></div>
 
-  <div class="card">
-    <h3>🎯 Objetivo</h3>
-    <p>
-      Criar sistemas úteis, evoluir como desenvolvedor
-      e construir uma carreira sólida em tecnologia.
-    </p>
-  </div>
+  <div id="header-component"></div>
 
-</section>
+  <main>
 
-<section class="about-actions">
+    <section class="hero">
+      <h1>👤 Sobre Mim</h1>
+      <p>Desenvolvedor em formação focado em tecnologia, automação e sistemas úteis.</p>
+    </section>
 
-  <button class="btn btn-primary" onclick="toggleAvaliacoes()">
-    ⭐ Ver avaliações
-  </button>
+    <section class="about-grid">
 
-</section>
+      <div class="card">
+        <h3>🚀 Quem sou eu</h3>
+        <p>Caio Vitor Malveira de Melo, Natal/RN. Apaixonado por tecnologia desde cedo.</p>
+      </div>
 
-<section class="avaliacoes" id="avaliacoes">
+      <div class="card">
+        <h3>🎓 Formação</h3>
+        <p>Sistemas para Internet (em andamento)<br>Ensino médio completo</p>
+      </div>
 
-  <img src="../images/avaliacaouber1.webp" alt="Uber avaliação">
-  <img src="../images/avaliacao991.webp" alt="99 avaliação">
-  <img src="../images/avaliacao992.webp" alt="99 avaliação">
+      <div class="card">
+        <h3>💼 Experiência</h3>
+        <p>FAB • Uber/99 • Teleperformance</p>
+      </div>
 
-</section>
+      <div class="card">
+        <h3>🧠 Tecnologias</h3>
+        <p>HTML • CSS • JS • Python • C • Flutter • IA</p>
+      </div>
+
+      <div class="card">
+        <h3>🎯 Objetivo</h3>
+        <p>Criar sistemas úteis e crescer na área de tecnologia.</p>
+      </div>
+
+    </section>
+
+    <section class="about-actions">
+      <button class="btn btn-primary" onclick="toggleAvaliacoes()">
+        ⭐ Ver avaliações
+      </button>
+    </section>
+
+    <section class="avaliacoes" id="avaliacoes">
+      <img src="/images/avaliacaouber1.webp" alt="Uber">
+      <img src="/images/avaliacao991.webp" alt="99">
+      <img src="/images/avaliacao992.webp" alt="99">
+    </section>
+
+  </main>
+
+  <div id="footer-component"></div>
+
+  <script src="/js/components.js"></script>
+  <script src="/js/stars.js"></script>
+
+  <script>
+    function toggleAvaliacoes() {
+      const el = document.getElementById("avaliacoes");
+
+      if (!el) return;
+
+      if (el.style.display === "flex") {
+        el.style.display = "none";
+      } else {
+        el.style.display = "flex";
+      }
+    }
+  </script>
+
+</body>
+</html>

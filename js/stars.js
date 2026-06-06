@@ -1,24 +1,28 @@
-const container = document.getElementById('stars');
-const totalStars = 150;
+document.addEventListener("DOMContentLoaded", () => {
 
-container.innerHTML = '';
+  const container = document.getElementById('stars');
+  if (!container) return;
 
-for (let i = 0; i < totalStars; i++) {
-  const star = document.createElement('div');
-  star.classList.add('star');
+  const totalStars = 150;
 
-  star.style.left = `${Math.random() * 100}%`;
-  star.style.top = `${Math.random() * 100}%`;
+  container.innerHTML = '';
 
-  const size = Math.random() * 2 + 1;
+  for (let i = 0; i < totalStars; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
 
-  star.style.width = `${size}px`;
-  star.style.height = `${size}px`;
+    star.style.left = `${Math.random() * 100}%`;
+    star.style.top = `${Math.random() * 100}%`;
 
-  star.style.opacity = Math.random() * 0.8 + 0.2;
+    const size = Math.random() * 2 + 1;
+    star.style.width = `${size}px`;
+    star.style.height = `${size}px`;
 
-  star.style.animationDuration = `${6 + Math.random() * 4}s`;
-  star.style.animationDelay = `${Math.random() * 5}s`;
+    star.style.opacity = Math.random() * 0.8 + 0.2;
+    star.style.animationDuration = `${6 + Math.random() * 4}s`;
+    star.style.animationDelay = `${Math.random() * 5}s`;
 
-  container.appendChild(star);
-}
+    container.appendChild(star);
+  }
+
+});

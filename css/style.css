@@ -1,5 +1,5 @@
 /* =======================================================
-   MALVEIRACAIODEV - STYLE.CSS (PROFISSIONAL LIMPO)
+   MALVEIRACAIODEV - STYLE.CSS (CLEAN FINAL v1)
    ======================================================= */
 
 /* =========================
@@ -16,16 +16,25 @@ html {
 }
 
 body {
-  width: 100%;
   min-height: 100vh;
   font-family: "Segoe UI", sans-serif;
   color: white;
   overflow-x: hidden;
-  background: radial-gradient(ellipse at bottom, #0d1b2a 0%, #000000 100%);
+
+  background: radial-gradient(
+    ellipse at bottom,
+    #0d1b2a 0%,
+    #000000 100%
+  );
+}
+
+/* espaço por causa do header fixo */
+body {
+  padding-top: 160px;
 }
 
 /* =========================
-   LAYOUT BASE
+   MAIN LAYOUT
 ========================= */
 main {
   max-width: 1200px;
@@ -37,7 +46,7 @@ main {
 }
 
 /* =========================
-   HEADER
+   HEADER FIXO
 ========================= */
 .topo {
   position: fixed;
@@ -50,20 +59,16 @@ main {
   flex-direction: column;
   align-items: center;
 
-  padding: 15px 10px;
+  padding: 12px 10px;
 
-  background: rgba(0,0,0,0.6);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(142,247,255,0.12);
-}
-
-body {
-  padding-top: 140px; /* evita sobreposição do header fixo */
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(142, 247, 255, 0.12);
 }
 
 .logo {
-  width: min(500px, 90vw);
-  filter: drop-shadow(0 0 15px rgba(142,247,255,0.25));
+  width: min(420px, 85vw);
+  filter: drop-shadow(0 0 12px rgba(142, 247, 255, 0.25));
 }
 
 /* =========================
@@ -73,7 +78,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 12px;
+  gap: 10px;
   margin-top: 10px;
 }
 
@@ -81,22 +86,21 @@ body {
   text-decoration: none;
   color: #8ef7ff;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 
-  padding: 10px 16px;
+  padding: 8px 14px;
   border-radius: 12px;
 
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(142,247,255,0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(142, 247, 255, 0.15);
 
   transition: 0.25s ease;
 }
 
 .menu a:hover {
   transform: translateY(-2px);
-  border-color: rgba(142,247,255,0.5);
-  box-shadow: 0 0 15px rgba(142,247,255,0.15);
+  border-color: rgba(142, 247, 255, 0.5);
+  box-shadow: 0 0 14px rgba(142, 247, 255, 0.2);
 }
 
 /* =========================
@@ -109,19 +113,19 @@ body {
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 10px;
   color: #8ef7ff;
+  margin-bottom: 10px;
 }
 
 .hero h2 {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
+  font-size: 1.3rem;
   font-weight: 400;
   color: #d8ffff;
+  margin-bottom: 15px;
 }
 
 .hero p {
-  line-height: 1.8;
+  line-height: 1.7;
   max-width: 750px;
   margin: 0 auto;
 }
@@ -135,47 +139,27 @@ body {
   border-radius: 10px;
   font-weight: bold;
   text-decoration: none;
-  cursor: pointer;
   transition: 0.3s ease;
 }
 
 .btn-primary {
-  color: #001018;
   background: linear-gradient(135deg, #6ee7ff, #8ef7ff);
+  color: #001018;
 }
 
 .btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(142, 247, 255, 0.2);
   color: white;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(142,247,255,0.2);
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 20px rgba(142,247,255,0.35);
+  box-shadow: 0 0 18px rgba(142, 247, 255, 0.35);
 }
 
 /* =========================
-   PROJETOS
-========================= */
-.projetos {
-  margin-top: 60px;
-}
-
-.projetos h2 {
-  font-size: 2rem;
-  color: #8ef7ff;
-  margin-bottom: 30px;
-}
-
-.projetos-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-}
-
-/* =========================
-   CARD (ÚNICO E PADRÃO)
+   CARDS (PROJETOS)
 ========================= */
 .card {
   display: block;
@@ -184,8 +168,8 @@ body {
   text-decoration: none;
   color: white;
 
-  background: rgba(0,255,255,0.05);
-  border: 1px solid rgba(142,247,255,0.15);
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(142, 247, 255, 0.15);
   backdrop-filter: blur(12px);
 
   transition: 0.3s ease;
@@ -194,7 +178,7 @@ body {
 .card:hover {
   transform: translateY(-5px);
   border-color: #8ef7ff;
-  box-shadow: 0 0 20px rgba(142,247,255,0.2);
+  box-shadow: 0 0 18px rgba(142, 247, 255, 0.2);
 }
 
 .card h2,
@@ -208,7 +192,7 @@ body {
 }
 
 /* =========================
-   STATUS
+   STATUS TAGS
 ========================= */
 .status {
   display: inline-block;
@@ -232,17 +216,17 @@ body {
   padding: 25px;
 
   border-radius: 15px;
-  background: rgba(0,0,0,0.4);
-  border: 1px solid rgba(142,247,255,0.1);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(142, 247, 255, 0.1);
 
   font-family: Consolas, monospace;
   white-space: pre-wrap;
   text-align: left;
-  line-height: 1.8;
+  line-height: 1.7;
 }
 
 /* =========================
-   APP / DOWNLOAD
+   APPS / DOWNLOAD
 ========================= */
 .app-download {
   max-width: 700px;
@@ -250,16 +234,15 @@ body {
   padding: 25px;
 
   border-radius: 18px;
-  background: rgba(0,0,0,0.4);
-  border: 1px solid rgba(142,247,255,0.1);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(142, 247, 255, 0.1);
 
   transition: 0.3s ease;
 }
 
 .app-download:hover {
   transform: translateY(-4px);
-  border-color: rgba(142,247,255,0.4);
-  box-shadow: 0 0 20px rgba(142,247,255,0.15);
+  border-color: rgba(142, 247, 255, 0.4);
 }
 
 /* =========================
@@ -276,7 +259,7 @@ body {
 .avaliacoes img {
   max-width: 280px;
   border-radius: 12px;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .avaliacoes img:hover {
@@ -297,20 +280,8 @@ body {
   border-radius: 16px;
 }
 
-.footer-content {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.footer-content a {
-  color: #8ef7ff;
-  text-decoration: none;
-}
-
 /* =========================
-   FUNDO
+   FUNDO ESTRELAS
 ========================= */
 .stars {
   position: fixed;
@@ -346,8 +317,8 @@ body {
 }
 
 @keyframes pulse {
-  0%,100% { opacity: .15; }
-  50% { opacity: .35; }
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.35; }
 }
 
 /* =========================
@@ -355,18 +326,18 @@ body {
 ========================= */
 @media (max-width: 768px) {
 
+  body {
+    padding-top: 190px;
+  }
+
   .hero h1 { font-size: 2rem; }
   .hero h2 { font-size: 1.1rem; }
 
-  .menu { gap: 8px; }
-
-  .card { width: 100%; }
-
-  .projetos-grid {
-    grid-template-columns: 1fr;
+  .menu {
+    gap: 6px;
   }
 
-  .footer-content {
-    flex-direction: column;
+  .card {
+    width: 100%;
   }
 }
