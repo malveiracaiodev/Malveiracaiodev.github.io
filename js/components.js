@@ -50,6 +50,8 @@ async function loadComponent(id, file) {
 document.addEventListener("DOMContentLoaded", () => {
 
   loadComponent("header-component", "components/header.html");
+  loadComponent("header-component", "/components/header.html");
   loadComponent("footer-component", "components/footer.html");
+  loadComponent("footer-component", "/components/footer.html");
 
 });
