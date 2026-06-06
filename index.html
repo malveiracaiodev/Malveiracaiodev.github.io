@@ -1,74 +1,43 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Caio Vitor Malveira de Melo | MalveiraCaioDev</title>
+  <title>MalveiraCaioDev</title>
 
-  <meta name="description"
-    content="Portfólio oficial de Caio Vitor Malveira de Melo. Projetos em Flutter, Inteligência Artificial, Sistemas para Internet e desenvolvimento de aplicativos.">
-
-  <link rel="icon" type="image/png" href="images/malveiracaiodev.png">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-  <!-- Fundo Cósmico -->
-  <div class="stars" id="stars"></div>
-  <div class="glow"></div>
+  <!-- HEADER FIXO -->
+  <div id="header-component"></div>
 
-  <!-- Cabeçalho -->
-  <header class="topo">
-
-    <img
-      src="images/malveiracaiodev.png"
-      alt="Logo Malveira Caio Dev"
-      class="logo">
-
-    <nav class="menu">
-      <a href="index.html">🏠 Início</a>
-      <a href="SobreMim.html">👤 Sobre Mim</a>
-      <a href="ComprasOrganizadas.html">📱 App Compras</a>
-      <a href="FinanceOrganization.html">💰 FinanceOrganization</a>
-      <a href="Curriculo.html">📄 Currículo</a>
-    </nav>
-
-  </header>
-
-  <!-- Conteúdo Principal -->
+  <!-- HERO -->
   <main>
 
-    <!-- Hero -->
     <section class="hero">
 
       <h1>Caio Vitor Malveira de Melo</h1>
 
-      <h2>
-        Desenvolvedor em Formação • Flutter • Inteligência Artificial • Sistemas para Internet
-      </h2>
+      <h2>Desenvolvedor • Flutter • IA • Sistemas</h2>
 
       <p>
-        Ex-militar da Força Aérea Brasileira, estudante de Sistemas para Internet
-        e criador de projetos focados em produtividade, organização e tecnologia.
+        Ex-militar da Força Aérea Brasileira e desenvolvedor em formação,
+        focado em criar soluções digitais úteis e funcionais.
       </p>
 
+      <!-- BOTÕES PRINCIPAIS -->
       <div class="hero-buttons">
 
-        <a href="Curriculo.html" class="btn">
+        <a href="/pages/Curriculo.html" class="btn">
           📄 Ver Currículo
         </a>
 
-        <a href="SobreMim.html" class="btn btn-secondary">
-          👤 Conheça Minha História
-        </a>
-
-        <a href="https://github.com/malveiracaiodev"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="btn btn-secondary">
+        <a href="https://github.com/" target="_blank" class="btn btn-secondary">
           💻 GitHub
         </a>
 
@@ -76,65 +45,29 @@
 
     </section>
 
-    <!-- Projetos em Destaque -->
+    <!-- DESTAQUES (OPCIONAL) -->
     <section class="destaques">
 
-      <a href="ComprasOrganizadas.html" class="card">
-
+      <a href="/pages/ComprasOrganizadas.html" class="card">
         <h3>📱 Compras Organizadas</h3>
-
-        <p>
-          Aplicativo Android desenvolvido em Flutter para facilitar
-          listas de compras, organização doméstica e controle de gastos.
-        </p>
-
+        <p>App de listas de compras e organização.</p>
       </a>
 
-      <a href="FinanceOrganization.html" class="card">
-
+      <a href="/pages/FinanceOrganization.html" class="card">
         <h3>💰 FinanceOrganization</h3>
-
-        <p>
-          Projeto focado em controle financeiro pessoal,
-          auxiliando na gestão de receitas, despesas e planejamento financeiro.
-        </p>
-
-      </a>
-
-      <a href="SobreMim.html" class="card">
-
-        <h3>🎓 Minha Jornada em TI</h3>
-
-        <p>
-          Estudante de Sistemas para Internet, com foco em Flutter,
-          Inteligência Artificial, desenvolvimento mobile e soluções digitais.
-        </p>
-
+        <p>Controle financeiro pessoal simples e eficiente.</p>
       </a>
 
     </section>
 
   </main>
 
-  <!-- Rodapé -->
-  <footer class="contato">
+  <!-- FOOTER FIXO -->
+  <div id="footer-component"></div>
 
-    <h2>Contato</h2>
-
-    <p>📧 caiomelo159@gmail.com</p>
-    <p>📱 (84) 99606-3030</p>
-    <p>📍 Natal/RN</p>
-
-    <hr>
-
-    <p>
-      © 2026 MalveiraCaioDev • Todos os direitos reservados
-    </p>
-
-  </footer>
-
-  <!-- Estrelas Animadas -->
-  <script src="stars.js"></script>
+  <!-- JS -->
+  <script src="js/components.js"></script>
+  <script src="js/stars.js"></script>
 
 </body>
 
