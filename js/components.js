@@ -1,22 +1,20 @@
-/* ==========================================================
-   COMPONENTS.JS
-   Sistema de Componentes - MalveiraCaioDev
-========================================================== */
-
 const ComponentCache = new Map();
 
-/* ==========================================================
+/* =========================
    LOAD COMPONENT
-========================================================== */
-async function loadComponent(id, file) {
+========================= */
+async function loadComponent(
+  id,
+  file
+) {
 
-  const element = document.getElementById(id);
+  const element =
+    document.getElementById(id);
 
   if (!element) return;
 
   try {
 
-    /* Cache */
     if (ComponentCache.has(file)) {
 
       element.innerHTML =
@@ -25,18 +23,23 @@ async function loadComponent(id, file) {
       return;
     }
 
-    const response = await fetch(file);
+    const response =
+      await fetch(file);
 
     if (!response.ok) {
 
       throw new Error(
-        `Erro ao carregar ${file}`
+        `Erro ao carregar: ${file}`
       );
     }
 
-    const html = await response.text();
+    const html =
+      await response.text();
 
-    ComponentCache.set(file, html);
+    ComponentCache.set(
+      file,
+      html
+    );
 
     element.innerHTML = html;
 
@@ -52,60 +55,28 @@ async function loadComponent(id, file) {
   }
 }
 
-/* ==========================================================
-   COMPONENTES GLOBAIS
-========================================================== */
-function loadGlobalComponents() {
-
-  loadComponent(
-    "header-component",
-    "/components/header.html"
-  );
-
-  loadComponent(
-    "footer-component",
-    "/components/footer.html"
-  );
-}
-
-/* ==========================================================
-   WIDGETS DE PROJETOS
-========================================================== */
-function loadProjectWidgets() {
-
-  loadComponent(
-    "widget-compras-markiii",
-    "/components/projetos/comprasmarkiii.html"
-  );
-
-  /* Futuros Projetos */
-
-  // loadComponent(
-  //   "widget-compras-markiv",
-  //   "/components/projetos/comprasmarkiv.html"
-  // );
-
-  // loadComponent(
-  //   "widget-financeorganization",
-  //   "/components/projetos/financeorganization.html"
-  // );
-
-  // loadComponent(
-  //   "widget-markv",
-  //   "/components/projetos/markv.html"
-  // );
-}
-
-/* ==========================================================
+/* =========================
    INIT
-========================================================== */
+========================= */
+
 document.addEventListener(
   "DOMContentLoaded",
-  () => {
+  async () => {
 
-    loadGlobalComponents();
+    await loadComponent(
+      "header-component",
+      "/components/header.html"
+    );
 
-    loadProjectWidgets();
+    await loadComponent(
+      "footer-component",
+      "/components/footer.html"
+    );
+
+    await loadComponent(
+      "widget-compras-markiii",
+      "/components/projetos/comprasmarkiii.html"
+    );
 
   }
 );
