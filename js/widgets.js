@@ -4,13 +4,11 @@
 ============================================================= */
 
 /* =============================================================
-   Compras Organizadas Mark III Widget
+   Função Genérica
 ============================================================= */
-function toggleMarkIII() {
+function toggleWidget(id) {
 
-  const widget = document.getElementById(
-    "markiii-content"
-  );
+  const widget = document.getElementById(id);
 
   if (!widget) return;
 
@@ -21,41 +19,26 @@ function toggleMarkIII() {
 }
 
 /* =============================================================
-   Compras Organizadas Mark IV Widget
-   (Reservado para futura implementação)
+   Compras Organizadas Mark III
 ============================================================= */
+function toggleMarkIII() {
+
+  toggleWidget("markiii-content");
+
+}
+
+/* =============================================================
+   Futuros Projetos
+============================================================= */
+
 // function toggleMarkIV() {
-//
-//   const widget = document.getElementById(
-//     "markiv-content"
-//   );
-//
-//   if (!widget) return;
-//
-//   widget.style.display =
-//     widget.style.display === "block"
-//       ? "none"
-//       : "block";
+//   toggleWidget("markiv-content");
 // }
 
-/* =============================================================
-   Finance Organization Widget
-   (Reservado para futura implementação)
-============================================================= */
-// function toggleFinanceOrganization() {
-//
-//   const widget = document.getElementById(
-//     "finance-content"
-//   );
-//
-//   if (!widget) return;
-//
-//   widget.style.display =
-//     widget.style.display === "block"
-//       ? "none"
-//       : "block";
+// function toggleFinance() {
+//   toggleWidget("finance-content");
 // }
 
-/* =============================================================
-   Fim dos Widgets
-============================================================= */
+// function toggleMarkV() {
+//   toggleWidget("markv-content");
+// }
