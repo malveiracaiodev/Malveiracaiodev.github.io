@@ -53,18 +53,39 @@
 
     </section>
 
-    <section class="about-actions">
-      <button class="btn btn-primary" onclick="toggleAvaliacoes()">
-        ⭐ Ver avaliações
-      </button>
-    </section>
+<section class="about-actions">
+  <button
+    class="btn btn-primary"
+    onclick="toggleAvaliacoes('avaliacoes99')">
 
-    <section class="avaliacoes" id="avaliacoes">
-      <img src="/images/avaliacaouber1.webp" alt="Uber">
-      <img src="/images/avaliacao991.webp" alt="99">
-      <img src="/images/avaliacao992.webp" alt="99">
-    </section>
+    ⭐ Ver avaliações 99Pop
 
+  </button>
+</section>
+
+<section class="avaliacoes" id="avaliacoes99">
+
+  <img src="/images/avaliacao991.jpg" alt="99">
+  <img src="/images/avaliacao992.jpg" alt="99">
+
+</section>
+
+<section class="about-actions">
+  <button
+    class="btn btn-primary"
+    onclick="toggleAvaliacoes('avaliacoesuber')">
+
+    ⭐ Ver avaliações Uber
+
+  </button>
+</section>
+
+<section class="avaliacoes" id="avaliacoesuber">
+
+  <img src="/images/avaliacaouber1.jpg" alt="Uber">
+  <img src="/images/avaliacaouber2.jpg" alt="Uber">
+
+</section>
   </main>
 
   <div id="footer-component"></div>
@@ -72,19 +93,19 @@
   <script src="/js/components.js"></script>
   <script src="/js/stars.js"></script>
 
-  <script>
-    function toggleAvaliacoes() {
-      const el = document.getElementById("avaliacoes");
+<script>
+function toggleAvaliacoes(id) {
 
-      if (!el) return;
+  const el = document.getElementById(id);
 
-      if (el.style.display === "flex") {
-        el.style.display = "none";
-      } else {
-        el.style.display = "flex";
-      }
-    }
+  if (!el) return;
+
+  el.style.display =
+    el.style.display === "flex"
+      ? "none"
+      : "flex";
+}
+</script>
   </script>
-
 </body>
 </html>

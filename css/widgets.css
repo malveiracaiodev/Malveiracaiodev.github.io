@@ -1,0 +1,9 @@
+.widget-content{
+  display:none;
+
+  margin-top:20px;
+}
+
+.widget-content.active{
+  display:block;
+}

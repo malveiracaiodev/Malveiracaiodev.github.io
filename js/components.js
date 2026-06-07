@@ -1,22 +1,22 @@
 const ComponentCache = new Map();
 
 /* =========================
-   LOAD COMPONENT (CORE)
+   LOAD COMPONENT
 ========================= */
 async function loadComponent(id, file) {
+
   const element = document.getElementById(id);
+
   if (!element) return;
 
   try {
-    // cache simples (evita refetch)
+
     if (ComponentCache.has(file)) {
       element.innerHTML = ComponentCache.get(file);
       return;
     }
 
-    const response = await fetch(file, {
-      cache: "force-cache"
-    });
+    const response = await fetch(file);
 
     if (!response.ok) {
       throw new Error(`Erro ao carregar: ${file}`);
@@ -25,9 +25,11 @@ async function loadComponent(id, file) {
     const html = await response.text();
 
     ComponentCache.set(file, html);
+
     element.innerHTML = html;
 
   } catch (error) {
+
     console.error(error);
 
     element.innerHTML = `
@@ -35,23 +37,50 @@ async function loadComponent(id, file) {
         padding:20px;
         text-align:center;
         color:#ff6b6b;
-        font-family:Segoe UI, sans-serif;
       ">
-        ⚠ Erro ao carregar componente<br>
-        <small>${file}</small>
+        ⚠ Erro ao carregar componente
       </div>
     `;
   }
 }
 
 /* =========================
-   INIT (HEADER / FOOTER ONLY)
+   INIT
 ========================= */
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener(
+  "DOMContentLoaded",
+  async () => {
 
-  loadComponent("header-component", "components/header.html");
-  loadComponent("header-component", "/components/header.html");
-  loadComponent("footer-component", "components/footer.html");
-  loadComponent("footer-component", "/components/footer.html");
+    /* Header */
+    await loadComponent(
+      "header-component",
+      "/components/header.html"
+    );
 
-});
+    /* Footer */
+    await loadComponent(
+      "footer-component",
+      "/components/footer.html"
+    );
+
+    /* Widgets de Projetos */
+
+    await loadComponent(
+      "widget-compras-markiii",
+      "/components/projetos/comprasmarkiii.html"
+    );
+
+    /* Futuros projetos */
+
+    // await loadComponent(
+    //   "widget-compras-markiv",
+    //   "/components/projetos/comprasmarkiv.html"
+    // );
+
+    // await loadComponent(
+    //   "widget-financeorganization",
+    //   "/components/projetos/financeorganization.html"
+    // );
+
+  }
+);
