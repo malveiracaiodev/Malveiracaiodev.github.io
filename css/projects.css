@@ -1,12 +1,47 @@
-.projetos{
-  margin-top:60px;
+/* =======================================================
+   PROJETOS
+======================================================= */
+
+.projetos {
+  margin-top: 60px;
 }
 
-.projetos-grid{
-  display:grid;
+/* =======================================================
+   GRID DE PROJETOS
+======================================================= */
+
+.projetos-grid {
+
+  display: grid;
 
   grid-template-columns:
-  repeat(auto-fit,minmax(320px,1fr));
+    repeat(auto-fit, minmax(320px, 1fr));
 
-  gap:25px;
+  gap: 25px;
+
+  margin-top: 30px;
+}
+
+/* =======================================================
+   CONTAINER DOS WIDGETS
+======================================================= */
+
+.projetos-grid > div {
+
+  width: 100%;
+}
+
+/* =======================================================
+   RESPONSIVO
+======================================================= */
+
+@media (max-width: 768px) {
+
+  .projetos-grid {
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
 }

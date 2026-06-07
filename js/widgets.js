@@ -12,10 +12,7 @@ function toggleWidget(id) {
 
   if (!widget) return;
 
-  widget.style.display =
-    widget.style.display === "block"
-      ? "none"
-      : "block";
+  widget.classList.toggle("active");
 }
 
 /* =============================================================
