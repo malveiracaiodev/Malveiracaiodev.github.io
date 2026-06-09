@@ -4,8 +4,7 @@
 
 function toggleWidget(id) {
 
-  const widget =
-    document.getElementById(id);
+  const widget = document.getElementById(id);
 
   if (!widget) return;
 
@@ -20,5 +19,16 @@ function toggleMarkIII() {
 
   toggleWidget(
     "markiii-content"
+  );
+}
+
+/* =============================================================
+   FinanceOrganization Mark I
+============================================================= */
+
+function toggleFinanceOrganization() {
+
+  toggleWidget(
+    "financeorganization-content"
   );
 }
