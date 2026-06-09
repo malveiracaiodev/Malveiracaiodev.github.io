@@ -77,6 +77,9 @@ document.addEventListener(
       "widget-compras-markiii",
       "/components/projetos/comprasmarkiii.html"
     );
-
+     await loadComponent(
+       "widget-Finance-Organization-MarkI",
+      "/components/projetos/financeorganization.html"
+);
   }
 );
