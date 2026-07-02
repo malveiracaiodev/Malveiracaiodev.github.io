@@ -1,164 +1,174 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MALVEIRACAIODEV // GATEWAY</title>
+  <!-- Tailwind CSS via CDN para estilização rápida -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animação para desenhar as linhas do circuito SVG */
+    .circuit-line {
+      stroke-dasharray: 400;
+      stroke-dashoffset: 400;
+      animation: drawLines 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0">
+    /* Animação de pulsação suave para os pontos de solda (dots) */
+    .soldering-dot {
+      opacity: 0;
+      animation: fadeInDot 0.5s ease-in-out forwards;
+    }
 
-  <title>MalveiraCaioDev</title>
+    /* Delays de animação para simular o circuito conectando em sequência */
+    .delay-1 { animation-delay: 0.2s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 1.2s; }
+    .delay-4 { animation-delay: 1.8s; }
 
-  <link rel="stylesheet" href="/css/style.css">
+    @keyframes drawLines {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
 
+    @keyframes fadeInDot {
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Animação de fade in para o terminal e os botões de seleção */
+    .fade-in {
+      opacity: 0;
+      animation: fadeInContent 1s ease-in-out forwards;
+    }
+
+    @keyframes fadeInContent {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
+<body class="bg-black text-zinc-100 font-mono min-h-screen flex flex-col justify-between p-6 select-none overflow-hidden">
 
-<body>
+  <!-- CABEÇALHO TÉCNICO -->
+  <header class="w-full max-w-5xl mx-auto flex justify-between items-center text-[10px] text-zinc-600">
+    <span>SYSTEM: GATEWAY_PORTAL</span>
+    <span>STATUS: ACTIVE_CONNECTION</span>
+  </header>
 
-  <!-- HEADER -->
-  <div id="header-component"></div>
+  <!-- ÁREA CENTRAL: O SÍMBOLO DO CIRCUITO NASCENDO -->
+  <main class="flex-1 flex flex-col items-center justify-center space-y-8 my-auto">
+    
+    <!-- SÍMBOLO: FRAGMENT CORE (M de Circuitos + Hexágono) -->
+    <div class="relative w-48 h-48 md:w-64 md:h-64 flex items-center justify-center">
+      <svg viewBox="0 0 200 200" class="w-full h-full filter drop-shadow-[0_0_15px_rgba(6,182,212,0.4)]">
+        
+        <!-- 1. O Hexágono Externo -->
+        <polygon 
+          points="100,20 170,60 170,140 100,180 30,140 30,60" 
+          fill="none" 
+          stroke="#06b6d4" 
+          stroke-width="1.5" 
+          stroke-opacity="0.3"
+          class="circuit-line delay-4"
+        />
 
-  <main>
+        <!-- 2. As Trilhas que formam o "M" -->
+        <!-- Perna Esquerda -->
+        <path d="M 60,140 L 60,80 L 100,120" fill="none" stroke="#00f3ff" stroke-width="2" class="circuit-line delay-1" />
+        <!-- Perna Direita -->
+        <path d="M 140,140 L 140,80 L 100,120" fill="none" stroke="#00f3ff" stroke-width="2" class="circuit-line delay-2" />
+        
+        <!-- 3. Pontos de Solda (Círculos Pulsantes) -->
+        <circle cx="60" cy="140" r="3.5" fill="#00f3ff" class="soldering-dot delay-1" />
+        <circle cx="60" cy="80" r="2.5" fill="#00f3ff" class="soldering-dot delay-2" />
+        <circle cx="100" cy="120" r="3" fill="#00f3ff" class="soldering-dot delay-3" />
+        <circle cx="140" cy="80" r="2.5" fill="#00f3ff" class="soldering-dot delay-2" />
+        <circle cx="140" cy="140" r="3.5" fill="#00f3ff" class="soldering-dot delay-1" />
 
-    <!-- HERO -->
-    <section class="hero">
+        <!-- Elemento Central Estético (Fragmento de Núcleo) -->
+        <polygon 
+          points="100,50 115,75 100,100 85,75" 
+          fill="#06b6d4" 
+          fill-opacity="0.15" 
+          stroke="#00f3ff" 
+          stroke-width="1"
+          class="soldering-dot delay-3 animate-pulse"
+        />
+      </svg>
+    </div>
 
-      <h1>🚀 MalveiraCaioDev</h1>
+    <!-- TERMINAL DE BOOT LOGS (Roda automaticamente com JS) -->
+    <div id="terminal-logs" class="h-24 text-xs text-cyan-500/80 w-full max-w-sm text-left px-4 font-mono leading-relaxed">
+      <!-- Injetado dinamicamente via Javascript -->
+    </div>
 
-      <h2>
-        Desenvolvimento Web • Flutter • IA • Sistemas
-      </h2>
+    <!-- PAINEL DE NAVEGAÇÃO DOS PROJETOS (Aparece em FadeIn após o carregamento) -->
+    <div id="selection-panel" class="hidden fade-in flex flex-col md:flex-row gap-4 w-full max-w-md pt-4">
+      
+      <!-- Botão para acessar o Mark I -->
+      <a 
+        href="/Mark-I/" 
+        class="flex-1 px-4 py-3 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-zinc-200 text-xs rounded tracking-widest text-center transition-all duration-300 font-bold"
+      >
+        [ LAUNCH_MARK_I_LEGACY ]
+      </a>
 
-      <p>
-        Sou Caio Vitor Malveira de Melo, desenvolvedor em formação,
-        ex-militar da Força Aérea Brasileira e apaixonado por
-        tecnologia. Meu foco é criar aplicações úteis, intuitivas
-        e funcionais para resolver problemas do dia a dia.
-      </p>
+      <!-- Botão para acessar o Mark II (Destaque Neon) -->
+      <a 
+        href="/Mark-II/" 
+        class="flex-1 px-4 py-3 bg-cyan-950/10 border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-500/10 text-cyan-400 text-xs rounded tracking-widest text-center transition-all duration-300 font-bold shadow-[0_0_15px_rgba(6,182,212,0.1)] hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]"
+      >
+        [ LAUNCH_MARK_II_REACT ]
+      </a>
 
-      <div class="hero-buttons">
-
-        <a
-          href="/pages/Curriculo.html"
-          class="btn btn-primary">
-
-          📄 Ver Currículo
-
-        </a>
-
-        <a
-          href="/pages/projetos.html"
-          class="btn btn-secondary">
-
-          🚀 Ver Projetos
-
-        </a>
-
-      </div>
-
-    </section>
-
-    <!-- PROJETOS EM DESTAQUE -->
-    <section class="destaques">
-
-      <div class="card">
-
-        <h3>📱 Compras Organizadas</h3>
-
-        <p>
-          Aplicativo para gerenciamento de listas de compras,
-          histórico de compras e organização doméstica.
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <h3>💰 Finance Organization</h3>
-
-        <p>
-          Sistema de controle financeiro pessoal atualmente
-          em desenvolvimento.
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <h3>🔮 Mark V</h3>
-
-        <p>
-          Próxima geração dos aplicativos com melhorias de UX,
-          novos recursos e integração expandida.
-        </p>
-
-      </div>
-
-    </section>
-
-    <!-- TECNOLOGIAS -->
-    <section class="hero">
-
-      <h2>🛠 Tecnologias</h2>
-
-      <p>
-        HTML • CSS • JavaScript • Python • Flutter • Git • GitHub • IA
-      </p>
-
-    </section>
-
-    <!-- ROADMAP -->
-    <section class="destaques">
-
-      <div class="card">
-
-        <h3>✅ Concluído</h3>
-
-        <p>
-          Compras Organizadas Mark III
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <h3>🚧 Em Desenvolvimento</h3>
-
-        <p>
-          Compras Organizadas Mark IV
-          <br>
-          Finance Organization
-        </p>
-
-      </div>
-
-      <div class="card">
-
-        <h3>🔮 Futuro</h3>
-
-        <p>
-          Mark V
-          <br>
-          Sistema de Login
-          <br>
-          Recursos Cloud
-        </p>
-
-      </div>
-
-    </section>
+    </div>
 
   </main>
 
-  <!-- FOOTER -->
-  <div id="footer-component"></div>
+  <!-- RODAPÉ TÉCNICO -->
+  <footer class="w-full max-w-5xl mx-auto text-center text-[10px] text-zinc-700">
+    <span>MALVEIRA_OS_SYSTEM // EST. 2025</span>
+  </footer>
 
-  <!-- JS -->
-  <script src="/js/components.js"></script>
-  <script src="/js/stars.js"></script>
+  <!-- SISTEMA DE EXECUÇÃO DO BOOT -->
+  <script>
+    const logs = [
+      "> Boot sequence started...",
+      "> Loading React & TypeScript Compiler...",
+      "> Establishing secure connection...",
+      "> Initializing Fragment Core...",
+      "> Core Online. Access granted."
+    ];
 
+    const terminal = document.getElementById("terminal-logs");
+    const selectionPanel = document.getElementById("selection-panel");
+
+    let logIndex = 0;
+
+    function printLog() {
+      if (logIndex < logs.length) {
+        // Cria um elemento <p> para cada linha de log
+        const p = document.createElement("p");
+        p.textContent = logs[logIndex];
+        terminal.appendChild(p);
+        logIndex++;
+        
+        // Configura tempos diferentes para cada log parecer um processo real
+        setTimeout(printLog, 450);
+      } else {
+        // Quando os logs terminam, exibe o painel de seleção com os caminhos
+        setTimeout(() => {
+          selectionPanel.classList.remove("hidden");
+        }, 300);
+      }
+    }
+
+    // Inicia a renderização do terminal após um breve silêncio inicial
+    setTimeout(printLog, 500);
+  </script>
 </body>
-
 </html>

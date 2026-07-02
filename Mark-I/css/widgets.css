@@ -1,0 +1,295 @@
+/* ==========================================================
+   WIDGETS.CSS
+   Widgets de Projetos - MalveiraCaioDev
+========================================================== */
+
+/* ==========================================================
+   CARD PRINCIPAL
+========================================================== */
+
+.widget-projeto {
+
+  margin: 40px auto;
+
+  padding: 30px;
+
+  border-radius: 18px;
+
+  background: rgba(0, 255, 255, 0.05);
+
+  border: 1px solid rgba(142, 247, 255, 0.15);
+
+  backdrop-filter: blur(12px);
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+.widget-projeto:hover {
+
+  transform: translateY(-3px);
+
+  border-color: #8ef7ff;
+
+  box-shadow: 0 0 20px rgba(142,247,255,.15);
+}
+
+.widget-projeto h2 {
+
+  color: #8ef7ff;
+
+  margin-bottom: 15px;
+}
+
+.widget-projeto p {
+
+  line-height: 1.7;
+
+  margin-bottom: 15px;
+}
+
+/* ==========================================================
+   STATUS / BADGES
+========================================================== */
+
+.project-badges {
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 10px;
+
+  margin-bottom: 20px;
+}
+
+/* ==========================================================
+   CONTEÚDO EXPANSÍVEL
+========================================================== */
+
+.widget-content {
+
+  display: none;
+
+  margin-top: 25px;
+
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(142,247,255,.15);
+}
+
+.widget-content.active {
+
+  display: block;
+}
+
+/* ==========================================================
+   BLOCO DE INFORMAÇÕES
+========================================================== */
+
+.widget-info {
+
+  max-width: 800px;
+
+  margin: 0 auto 25px auto;
+}
+
+.widget-info p {
+
+  margin-bottom: 12px;
+}
+
+/* ==========================================================
+   AÇÕES DO PROJETO
+========================================================== */
+
+.widget-actions {
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+/* ==========================================================
+   MENUS INTERNOS
+========================================================== */
+
+.widget-menu {
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-bottom: 25px;
+}
+
+.widget-subtitle {
+
+  color: #8ef7ff;
+
+  margin-top: 20px;
+
+  margin-bottom: 15px;
+}
+
+/* ==========================================================
+   GALERIAS DE IMAGENS
+========================================================== */
+
+.widget-gallery {
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 20px;
+
+  margin-top: 20px;
+
+  margin-bottom: 30px;
+}
+
+.widget-gallery img {
+
+  width: 220px;
+
+  max-width: 100%;
+
+  border-radius: 14px;
+
+  border: 1px solid rgba(142,247,255,.15);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+.widget-gallery img:hover {
+
+  transform: scale(1.05);
+
+  box-shadow: 0 0 15px rgba(142,247,255,.25);
+}
+
+/* ==========================================================
+   LINKS EXTERNOS
+========================================================== */
+
+.widget-links {
+
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-bottom: 30px;
+}
+
+/* ==========================================================
+   ROADMAP
+========================================================== */
+
+.roadmap {
+
+  list-style: none;
+
+  max-width: 550px;
+
+  margin: 20px auto 0 auto;
+
+  padding: 0;
+
+  text-align: left;
+}
+
+.roadmap li {
+
+  padding: 10px 0;
+
+  border-bottom: 1px solid rgba(255,255,255,.08);
+
+  transition: .3s ease;
+}
+
+.roadmap li:hover {
+
+  padding-left: 8px;
+
+  color: #8ef7ff;
+}
+
+/* ==========================================================
+   BLOCOS FUTUROS
+========================================================== */
+
+.widget-placeholder {
+
+  padding: 25px;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,.03);
+
+  border: 1px dashed rgba(142,247,255,.2);
+
+  text-align: center;
+
+  opacity: .85;
+}
+
+/* ==========================================================
+   RESPONSIVO
+========================================================== */
+
+@media (max-width: 768px) {
+
+  .widget-projeto {
+
+    padding: 20px;
+  }
+
+  .widget-actions {
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .widget-links {
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .widget-menu {
+
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+  .widget-gallery img {
+
+    width: 170px;
+  }
+}

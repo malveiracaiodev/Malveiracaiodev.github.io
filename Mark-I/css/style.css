@@ -1,0 +1,343 @@
+/* =======================================================
+   MALVEIRACAIODEV - STYLE.CSS (CLEAN FINAL v1)
+   ======================================================= */
+
+/* =========================
+   RESET + BASE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+  overflow-x: hidden;
+
+  background: radial-gradient(
+    ellipse at bottom,
+    #0d1b2a 0%,
+    #000000 100%
+  );
+}
+
+/* espaço por causa do header fixo */
+body {
+  padding-top: 160px;
+}
+
+/* =========================
+   MAIN LAYOUT
+========================= */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   HEADER FIXO
+========================= */
+.topo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 12px 10px;
+
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(142, 247, 255, 0.12);
+}
+
+.logo {
+  width: min(420px, 85vw);
+  filter: drop-shadow(0 0 12px rgba(142, 247, 255, 0.25));
+}
+
+/* =========================
+   MENU
+========================= */
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #8ef7ff;
+  font-weight: 600;
+  font-size: 0.9rem;
+
+  padding: 8px 14px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(142, 247, 255, 0.15);
+
+  transition: 0.25s ease;
+}
+
+.menu a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(142, 247, 255, 0.5);
+  box-shadow: 0 0 14px rgba(142, 247, 255, 0.2);
+}
+
+/* =========================
+   HERO
+========================= */
+.hero {
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  color: #8ef7ff;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: #d8ffff;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  line-height: 1.7;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+.btn {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #6ee7ff, #8ef7ff);
+  color: #001018;
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(142, 247, 255, 0.2);
+  color: white;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 18px rgba(142, 247, 255, 0.35);
+}
+
+/* =========================
+   CARDS (PROJETOS)
+========================= */
+.card {
+  display: block;
+  padding: 22px;
+  border-radius: 18px;
+  text-decoration: none;
+  color: white;
+
+  background: rgba(0, 255, 255, 0.05);
+  border: 1px solid rgba(142, 247, 255, 0.15);
+  backdrop-filter: blur(12px);
+
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #8ef7ff;
+  box-shadow: 0 0 18px rgba(142, 247, 255, 0.2);
+}
+
+.card h2,
+.card h3 {
+  color: #8ef7ff;
+  margin-bottom: 10px;
+}
+
+.card p {
+  line-height: 1.6;
+}
+
+/* =========================
+   STATUS TAGS
+========================= */
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.status.online { background: rgba(0,255,120,0.15); color: #7dffba; }
+.status.dev { background: rgba(255,180,0,0.15); color: #ffd36e; }
+.status.future { background: rgba(150,150,255,0.15); color: #b8c0ff; }
+
+/* =========================
+   SOBRE (TERMINAL)
+========================= */
+.sobre-terminal {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 25px;
+
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(142, 247, 255, 0.1);
+
+  font-family: Consolas, monospace;
+  white-space: pre-wrap;
+  text-align: left;
+  line-height: 1.7;
+}
+
+/* =========================
+   APPS / DOWNLOAD
+========================= */
+.app-download {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 25px;
+
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(142, 247, 255, 0.1);
+
+  transition: 0.3s ease;
+}
+
+.app-download:hover {
+  transform: translateY(-4px);
+  border-color: rgba(142, 247, 255, 0.4);
+}
+
+/* =========================
+   AVALIAÇÕES
+========================= */
+.avaliacoes {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.avaliacoes img {
+  max-width: 280px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.avaliacoes img:hover {
+  transform: scale(1.04);
+}
+
+/* =========================
+   FOOTER
+========================= */
+.contato {
+  max-width: 1000px;
+  margin: 60px auto 30px;
+  padding: 25px;
+  text-align: center;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(142,247,255,0.12);
+  border-radius: 16px;
+}
+
+/* =========================
+   FUNDO ESTRELAS
+========================= */
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: rise linear infinite;
+}
+
+@keyframes rise {
+  from { transform: translateY(100vh); opacity: 0; }
+  50% { opacity: 1; }
+  to { transform: translateY(-100vh); opacity: 0; }
+}
+
+.glow {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(142,247,255,0.12), transparent 70%);
+  animation: pulse 10s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.35; }
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+
+  body {
+    padding-top: 190px;
+  }
+
+  .hero h1 { font-size: 2rem; }
+  .hero h2 { font-size: 1.1rem; }
+
+  .menu {
+    gap: 6px;
+  }
+
+  .card {
+    width: 100%;
+  }
+}
