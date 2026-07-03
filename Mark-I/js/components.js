@@ -65,21 +65,21 @@ document.addEventListener(
 
     await loadComponent(
       "header-component",
-      "./components/header.html"
+      "../components/header.html"
     );
 
     await loadComponent(
       "footer-component",
-      "./components/footer.html"
+      "../components/footer.html"
     );
 
     await loadComponent(
       "widget-compras-markiii",
-      "./components/projetos/comprasmarkiii.html"
+      "../components/projetos/comprasmarkiii.html"
     );
      await loadComponent(
        "widget-Finance-Organization-MarkI",
-      "./components/projetos/financeorganization.html"
+      "../components/projetos/financeorganization.html"
 );
   }
 );
