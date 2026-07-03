@@ -106,28 +106,31 @@
       <!-- Injetado dinamicamente via Javascript -->
     </div>
 
-    <!-- PAINEL DE NAVEGAÇÃO DOS PROJETOS (Aparece em FadeIn após o carregamento) -->
-    <div id="selection-panel" class="hidden fade-in flex flex-col md:flex-row gap-4 w-full max-w-md pt-4">
+    <!-- PAINEL DE NAVEGAÇÃO DOS PROJETOS (Grid de 3 Colunas centralizado e expandido para max-w-4xl) -->
+    <div id="selection-panel" class="hidden fade-in grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl pt-4 px-4 mx-auto justify-items-center">
       
       <!-- Botão para acessar o Mark I -->
       <a 
         href="/Mark-I/" 
-        class="flex-1 px-4 py-3 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-zinc-200 text-xs rounded tracking-widest text-center transition-all duration-300 font-bold"
+        class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-zinc-200 text-xs rounded tracking-widest text-center transition-all duration-300 font-bold"
       >
         [ LAUNCH_PORTFOLIO_MARK_I_LEGACY ]
       </a>
 
-      <!-- Botão para acessar o Mark II (Destaque Neon) -->
+      <!-- Botão para acessar o Mark II (Destaque Neon Ciano) -->
       <a 
         href="/Mark-II/" 
-        class="flex-1 px-4 py-3 bg-cyan-950/10 border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-500/10 text-cyan-400 text-xs rounded tracking-widest text-center transition-all duration-300 font-bold shadow-[0_0_15px_rgba(6,182,212,0.1)] hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]"
+        class="w-full px-4 py-3 bg-cyan-950/10 border border-cyan-500/40 hover:border-cyan-400 hover:bg-cyan-500/10 text-cyan-400 text-xs rounded tracking-widest text-center transition-all duration-300 font-bold shadow-[0_0_15px_rgba(6,182,212,0.15)] hover:shadow-[0_0_20px_rgba(6,182,212,0.25)]"
       >
         [ LAUNCH_PORTFOLIO_MARK_II_REACT ]
       </a>
-       <!-- Botão para acessar o Fragmentos da Eternidade -->
+
+      <!-- Botão para acessar o Fragmentos da Eternidade (Destaque Neon Âmbar/Dourado) -->
       <a 
         href="https://malveiracaiodev.github.io/Fragmentos-da-eternidade/" 
-        class="flex-1 px-4 py-3 bg-yellow-950/10 border border-yellow-500/40 hover:border-cyan-400 hover:bg-cyan-500/10 text-yellow-400 text-xs rounded tracking-widest text-center transition-all duration-300 font-bold shadow-[0_0_15px_rgba(6,182,212,0.1)] hover:shadow-[0_0_20px_rgba(6,182,212,0.2)]"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full px-4 py-3 bg-amber-950/10 border border-amber-500/40 hover:border-amber-400 hover:bg-amber-500/10 text-amber-400 text-xs rounded tracking-widest text-center transition-all duration-300 font-bold shadow-[0_0_15px_rgba(245,158,11,0.15)] hover:shadow-[0_0_20px_rgba(245,158,11,0.25)]"
       >
         [ LAUNCH_FRAGMENTOS_DA_ETERNIDADE ]
       </a>
